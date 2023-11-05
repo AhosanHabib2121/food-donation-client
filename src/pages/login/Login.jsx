@@ -1,25 +1,77 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { BiSolidHide, BiSolidShow } from "react-icons/bi";
 import { FcGoogle } from "react-icons/fc";
 import './Login.css'
+import { AuthContext } from "../../authProvider/AuthProvider";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 const Login = () => {
     const [passShowHide, setPassShowHide] = useState(false);
+    const { accountLogin } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const [error, setError] = useState(null);
+
+    const handleLogin = (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const email = form.email.value;
+      const password = form.password.value;
+      //  error message clean
+      setError("");
+
+      if (password.length < 6) {
+        setError("Password must be 6 characters!");
+        return;
+      }
+
+      // create account
+      accountLogin(email, password)
+        .then((data) => {
+          const lastLoginAt = data.user?.metadata?.lastSignInTime;
+          const userData = {
+            email,
+            password,
+            lastLoginAt,
+          };
+          axios.patch("http://localhost:5000/user", userData)
+              .then(res => {
+              if (res.data.modifiedCount == 1) {
+                const Toast = Swal.mixin({
+                  toast: true,
+                  position: "top-end",
+                  showConfirmButton: false,
+                  timer: 3000,
+                  timerProgressBar: true,
+                  didOpen: (toast) => {
+                    toast.addEventListener("mouseenter", Swal.stopTimer);
+                    toast.addEventListener("mouseleave", Swal.resumeTimer);
+                  },
+                });
+                Toast.fire({
+                  icon: "success",
+                  title: "Login successfully",
+                });
+                form.reset();
+                navigate("/");
+              }
+            });
+        })
+        .catch((error) => setError(`Please signUp then try. ${error.message}`));
+    };
     
     return (
       <div className="hero min-h-screen lRbg-image">
-        <div className="hero-content flex-col lg:flex-row">
-          <div className="text-center lg:text-left w-1/2 mr-14">
-            {/* <img src={image} alt="not found" /> */}
-          </div>
-
+        <div className="hero-content w-full">
           <div className="card flex-shrink-0 w-full max-w-sm border border-[#D0D0D0]">
             <h1 className="text-[#fff] text-4xl text-center font-semibold mt-8">
               Login
             </h1>
-            {/* onSubmit={handleLogin} */}
-            <form className="card-body">
+            <div className=" px-8 py-5">
+              {error ? <p className=" text-red-500">{error}</p> : ""}
+            </div>
+            <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text text-[#fff]">Email</span>
@@ -63,7 +115,8 @@ const Login = () => {
                 <label className="my-2">
                   <a
                     href="#"
-                    className="label-text-alt link link-hover text-sm text-white">
+                    className="label-text-alt link link-hover text-sm text-white"
+                  >
                     Forgot password?
                   </a>
                 </label>
@@ -88,7 +141,8 @@ const Login = () => {
             <div className="text-center mt-4 mb-4">
               <button
                 // onClick={handleGoogle}
-                className="btn bg-inherit hover:bg-[#d59a11]  outline-1  normal-case rounded-full w-64 border-gray-400 text-white ">
+                className="btn bg-inherit hover:bg-[#d59a11]  outline-1  normal-case rounded-full w-64 border-gray-400 text-white "
+              >
                 <FcGoogle className=" text-3xl top-2 left-4 md:left-32 " />
                 Continue with Google
               </button>

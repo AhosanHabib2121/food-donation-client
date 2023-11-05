@@ -1,10 +1,81 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './Register.css'
 import { useState } from "react";
 import { BiSolidHide, BiSolidShow } from "react-icons/bi";
+import { useContext } from "react";
+import { AuthContext } from "../../authProvider/AuthProvider";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const Register = () => {
     const [passShowHide, setPassShowHide] = useState(false);
+    const { createAccount, profileUpdate } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const [error, setError] = useState(null);
+
+    const handleRegister = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const photo_url = form.photo_url.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        // error message clean
+        setError("");
+
+        if (password.length < 6) {
+            setError("Password must be 6 characters!");
+            return;
+        }
+        
+        createAccount(email, password)
+            .then((data) => {
+                // update profile
+                profileUpdate(name, photo_url)
+                    .then(() => {
+                        const createdAt = data.user?.metadata.creationTime;
+                        const userData = {
+                          name,
+                          photo_url,
+                          email,
+                          password,
+                          createdAt,
+                        };
+                        axios.post("http://localhost:5000/user", userData)
+                        .then(res => {
+                            if (res.data.insertedId) {
+                                const Toast = Swal.mixin({
+                                  toast: true,
+                                  position: "top-end",
+                                  showConfirmButton: false,
+                                  timer: 3000,
+                                  timerProgressBar: true,
+                                  didOpen: (toast) => {
+                                    toast.addEventListener(
+                                      "mouseenter",
+                                      Swal.stopTimer
+                                    );
+                                    toast.addEventListener(
+                                      "mouseleave",
+                                      Swal.resumeTimer
+                                    );
+                                  },
+                                });
+                                Toast.fire({
+                                  icon: "success",
+                                  title: "Account create successfully",
+                                });
+                                form.reset();
+                                navigate('/');
+                            }
+                        })
+                    })
+            })
+          .catch((error) => console.log(error.message));
+
+    };
+
     return (
       <div className=" lRbg-image">
         <div className=" pt-14 pb-24 px-8 md:px-0">
@@ -14,13 +85,12 @@ const Register = () => {
                 Register
               </h1>
             </div>
-            {/* <div className=" px-8 py-5">
+            <div className=" px-8 py-5">
               {error ? <p className=" text-red-500">{error}</p> : ""}
             </div>
-                     */}
+                    
             <div className="card w-full">
-              {/* onSubmit={handleRegister} */}
-              <form className=" px-8">
+              <form onSubmit={handleRegister} className=" px-8">
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text text-white text-lg font-poppins font-medium ">
@@ -38,13 +108,13 @@ const Register = () => {
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text text-white text-lg font-poppins font-medium ">
-                      Image-url
+                      Photo-url
                     </span>
                   </label>
                   <input
                     type="text"
-                    name="image_url"
-                    placeholder="image url"
+                    name="photo_url"
+                    placeholder="photo url"
                     className="input input-bordered"
                     required
                   />

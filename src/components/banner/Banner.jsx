@@ -10,18 +10,18 @@ const Banner = () => {
 
           {/* content area */}
           <div className="absolute flex items-center h-full right-0 left-0 bg-gradient-to-r from-[#1f2b3bd2] to-[rgba(31, 43, 59, 0.92)]">
-            <div className="text-white space-y-7 pl-14 w-1/2 mx-auto">
-              <h2 className=" text-6xl font-bold text-center ">
+            <div className="text-white space-y-7 px-2 w-full lg:w-1/2 lg:mx-auto">
+              <h2 className=" text-4xl lg:text-6xl font-bold text-center ">
                 The Impactful Practice of Food Donation
               </h2>
-              <p className="text-center">
+              <p className="text-center w-1/2 mx-auto lg:w-full">
                 Food donation is the act of providing food to individuals or
                 organizations in need, typically for humanitarian or charitable
                 purposes
               </p>
               {/* button area */}
               <div className=" text-center ">
-                <button className="btn bg-[#82b440] hover:bg-white hover:text-[#82b440] border-0 text-white mr-5 normal-case text-lg">
+                <button className="btn bg-[#d59a11] hover:bg-white hover:text-[#d59a11] border-0 text-white mr-5 normal-case text-lg">
                   Read More
                 </button>
               </div>
@@ -45,18 +45,18 @@ const Banner = () => {
 
           {/* content area */}
           <div className="absolute flex items-center h-full right-0 left-0 bg-gradient-to-r from-[#1f2b3bd2] to-[rgba(31, 43, 59, 0.92)]">
-            <div className="text-white space-y-7 pl-14 w-1/2 mx-auto">
-              <h2 className=" text-6xl font-bold text-center ">
+            <div className="text-white space-y-7 px-2 w-full lg:w-1/2 lg:mx-auto">
+              <h2 className=" text-4xl lg:text-6xl font-bold text-center ">
                 Food Sharing Societal Implications
               </h2>
-              <p className="text-center">
+              <p className="text-center w-1/2 mx-auto lg:w-full">
                 Food donation is the act of providing food to individuals or
                 organizations in need, typically for humanitarian or charitable
                 purposes
               </p>
               {/* button area */}
               <div className=" text-center ">
-                <button className="btn bg-[#82b440] hover:bg-white hover:text-[#82b440] border-0 text-white mr-5 normal-case text-lg">
+                <button className="btn bg-[#ffb606] hover:bg-white hover:text-[#d59a11] border-0 text-white mr-5 normal-case text-lg">
                   Read More
                 </button>
               </div>

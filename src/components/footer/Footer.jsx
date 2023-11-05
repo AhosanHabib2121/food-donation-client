@@ -35,7 +35,7 @@ const Footer = () => {
             <nav>
               <header className=" footer-title text-xl mb-4 text-white  opacity-100 ">
                 Contact
-                <div className=" bg-[#82b440] h-1 w-10 mt-2"></div>
+                <div className=" bg-[#d59a11] h-1 w-10 mt-2"></div>
               </header>
               <div className=" space-y-3">
                 <div className=" flex gap-2">
@@ -59,35 +59,35 @@ const Footer = () => {
             <nav>
               <header className="footer-title text-xl mb-4 text-white  opacity-100">
                 Follow us
-                <div className=" bg-[#82b440] h-1 w-10 mt-2"></div>
+                <div className=" bg-[#d59a11] h-1 w-10 mt-2"></div>
               </header>
               <div className="grid grid-flow-col gap-4">
                 <a href="#">
-                  <CiFacebook className=" text-4xl hover:text-[#82b440] rounded-full" />
+                  <CiFacebook className=" text-4xl hover:text-[#d59a11] rounded-full" />
                 </a>
                 <a href="#">
-                  <AiFillTwitterCircle className=" text-4xl hover:text-[#82b440] rounded-full" />
+                  <AiFillTwitterCircle className=" text-4xl hover:text-[#d59a11] rounded-full" />
                 </a>
                 <a>
-                  <AiOutlineGooglePlus className=" text-4xl hover:text-[#82b440] rounded-full" />
+                  <AiOutlineGooglePlus className=" text-4xl hover:text-[#d59a11] rounded-full" />
                 </a>
                 <a>
-                  <AiFillInstagram className=" text-4xl hover:text-[#82b440] rounded-full" />
+                  <AiFillInstagram className=" text-4xl hover:text-[#d59a11] rounded-full" />
                 </a>
               </div>
             </nav>
             <nav>
               <header className="footer-title text-xl mb-4 text-white  opacity-100">
                 Legal
-                <div className=" bg-[#82b440] h-1 w-10 mt-2"></div>
+                <div className=" bg-[#d59a11] h-1 w-10 mt-2"></div>
               </header>
-              <Link className="link link-hover hover:text-[#82b440]">
+              <Link className="link link-hover hover:text-[#d59a11]">
                 Terms of use
               </Link>
-              <Link className="link link-hover hover:text-[#82b440]">
+              <Link className="link link-hover hover:text-[#d59a11]">
                 Privacy policy
               </Link>
-              <Link className="link link-hover hover:text-[#82b440]">
+              <Link className="link link-hover hover:text-[#d59a11]">
                 Cookie policy
               </Link>
             </nav>
@@ -102,27 +102,27 @@ const Footer = () => {
               </span>
             </div>
             <div className=" space-x-7">
-              <Link to={"/"} className="link link-hover hover:text-[#82b440]">
+              <Link to={"/"} className="link link-hover hover:text-[#d59a11]">
                 Home
               </Link>
               <Link
                 to={"/availableFoods"}
-                className="link link-hover hover:text-[#82b440]">
+                className="link link-hover hover:text-[#d59a11]">
                 Available Foods
               </Link>
               <Link
                 to={"/addFood"}
-                className="link link-hover hover:text-[#82b440]">
+                className="link link-hover hover:text-[#d59a11]">
                 Add Food
               </Link>
               <Link
                 to={"/manageMyFoods"}
-                className="link link-hover hover:text-[#82b440]">
+                className="link link-hover hover:text-[#d59a11]">
                 Manage My Foods
               </Link>
               <Link
                 to={"/myFoodRequest"}
-                className="link link-hover hover:text-[#82b440]">
+                className="link link-hover hover:text-[#d59a11]">
                 My Food Request
               </Link>
             </div>

@@ -9,7 +9,10 @@ export default {
       fontFamily: {
         robotFont: 'Roboto, sans-serif ',
       }
-    }
+    },
+    daisyui: {
+      themes: ["dark", "light"],
+    },
   },
  plugins: [require("daisyui")],
 }

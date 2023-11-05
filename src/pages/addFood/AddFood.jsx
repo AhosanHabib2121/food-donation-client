@@ -1,11 +1,55 @@
+import { useContext } from "react";
 import Footer from "../../components/footer/Footer";
+import { AuthContext } from "../../authProvider/AuthProvider";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const AddFood = () => {
-
+    const { user } = useContext(AuthContext);
     // ● Donator Image , Name, & email (From logged in user)
     // ● Food Status (By default keep it ”available”)
+    
     const handleSubmit = e => {
         e.preventDefault();
+        const form = e.target;
+        const food_name = form.food_name.value;
+        const food_image = form.food_image.value;
+        const pickup_location = form.pickup_location.value;
+        const food_quantity = form.food_quantity.value;
+        const expired_date = form.expired_date.value;
+        const additional_notes = form.additional_notes.value;
+        const userName = user?.displayName;
+        const userEmail = user?.email;
+        const userImage = user?.photoURL;
+
+        const addFoodInfo = {
+          food_name,
+          food_image,
+          pickup_location,
+          food_quantity,
+          expired_date,
+          additional_notes,
+          userName,
+          userEmail,
+          userImage,
+        };
+        axios.post("http://localhost:5000/foods", addFoodInfo)
+            .then(res => {
+                if(res.data.acknowledged){
+                    Swal.fire({
+                        position: "top-center",
+                        icon: "success",
+                        title: "Food added successfully!",
+                        showConfirmButton: false,
+                        timer: 2000,
+                    });
+                    form.reset();
+                }
+                
+            })
+            .catch(error => console.log(error))
+
+
     }
     
   return (
@@ -58,6 +102,7 @@ const AddFood = () => {
                     name="pickup_location"
                     className="textarea textarea-bordered"
                     placeholder="pickup Location"
+                    required
                   ></textarea>
                 </div>
                 <div className="md:flex gap-4">
@@ -101,6 +146,7 @@ const AddFood = () => {
                     name="additional_notes"
                     className="textarea textarea-bordered"
                     placeholder="additional Notes"
+                    required
                   ></textarea>
                 </div>
 

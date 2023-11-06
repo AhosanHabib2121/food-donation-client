@@ -21,7 +21,7 @@ const Banner = () => {
               </p>
               {/* button area */}
               <div className=" text-center ">
-                <button className="btn bg-[#d59a11] hover:bg-white hover:text-[#d59a11] border-0 text-white mr-5 normal-case text-lg">
+                <button className="btn bg-[#112A46] hover:bg-white hover:text-[#112A46] border-0 text-white mr-5 normal-case text-lg">
                   Read More
                 </button>
               </div>
@@ -56,7 +56,7 @@ const Banner = () => {
               </p>
               {/* button area */}
               <div className=" text-center ">
-                <button className="btn bg-[#ffb606] hover:bg-white hover:text-[#d59a11] border-0 text-white mr-5 normal-case text-lg">
+                <button className="btn bg-[#ffb606] hover:bg-white hover:text-[#112A46] border-0 text-white mr-5 normal-case text-lg">
                   Read More
                 </button>
               </div>

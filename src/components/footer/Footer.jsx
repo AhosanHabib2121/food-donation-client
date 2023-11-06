@@ -23,7 +23,8 @@ const Footer = () => {
                 />
                 <Link
                   to="/"
-                  className=" uppercase text-lg md:text-2xl font-semibold tracking-wider font-robotFont">
+                  className=" uppercase text-lg md:text-2xl font-semibold tracking-wider font-robotFont"
+                >
                   FOODDONATION
                 </Link>
               </div>
@@ -35,7 +36,7 @@ const Footer = () => {
             <nav>
               <header className=" footer-title text-xl mb-4 text-white  opacity-100 ">
                 Contact
-                <div className=" bg-[#d59a11] h-1 w-10 mt-2"></div>
+                <div className=" bg-[#A4A0CC] h-1 w-10 mt-2"></div>
               </header>
               <div className=" space-y-3">
                 <div className=" flex gap-2">
@@ -59,35 +60,35 @@ const Footer = () => {
             <nav>
               <header className="footer-title text-xl mb-4 text-white  opacity-100">
                 Follow us
-                <div className=" bg-[#d59a11] h-1 w-10 mt-2"></div>
+                <div className=" bg-[#A4A0CC] h-1 w-10 mt-2"></div>
               </header>
               <div className="grid grid-flow-col gap-4">
                 <a href="#">
-                  <CiFacebook className=" text-4xl hover:text-[#d59a11] rounded-full" />
+                  <CiFacebook className=" text-4xl hover:text-[#A4A0CC] rounded-full" />
                 </a>
                 <a href="#">
-                  <AiFillTwitterCircle className=" text-4xl hover:text-[#d59a11] rounded-full" />
+                  <AiFillTwitterCircle className=" text-4xl hover:text-[#A4A0CC] rounded-full" />
                 </a>
                 <a>
-                  <AiOutlineGooglePlus className=" text-4xl hover:text-[#d59a11] rounded-full" />
+                  <AiOutlineGooglePlus className=" text-4xl hover:text-[#A4A0CC] rounded-full" />
                 </a>
                 <a>
-                  <AiFillInstagram className=" text-4xl hover:text-[#d59a11] rounded-full" />
+                  <AiFillInstagram className=" text-4xl hover:text-[#A4A0CC] rounded-full" />
                 </a>
               </div>
             </nav>
             <nav>
               <header className="footer-title text-xl mb-4 text-white  opacity-100">
                 Legal
-                <div className=" bg-[#d59a11] h-1 w-10 mt-2"></div>
+                <div className=" bg-[#A4A0CC] h-1 w-10 mt-2"></div>
               </header>
-              <Link className="link link-hover hover:text-[#d59a11]">
+              <Link className="link link-hover hover:text-[#A4A0CC]">
                 Terms of use
               </Link>
-              <Link className="link link-hover hover:text-[#d59a11]">
+              <Link className="link link-hover hover:text-[#A4A0CC]">
                 Privacy policy
               </Link>
-              <Link className="link link-hover hover:text-[#d59a11]">
+              <Link className="link link-hover hover:text-[#A4A0CC]">
                 Cookie policy
               </Link>
             </nav>
@@ -102,27 +103,31 @@ const Footer = () => {
               </span>
             </div>
             <div className=" space-x-7">
-              <Link to={"/"} className="link link-hover hover:text-[#d59a11]">
+              <Link to={"/"} className="link link-hover hover:text-[#A4A0CC]">
                 Home
               </Link>
               <Link
                 to={"/availableFoods"}
-                className="link link-hover hover:text-[#d59a11]">
+                className="link link-hover hover:text-[#A4A0CC]"
+              >
                 Available Foods
               </Link>
               <Link
                 to={"/addFood"}
-                className="link link-hover hover:text-[#d59a11]">
+                className="link link-hover hover:text-[#A4A0CC]"
+              >
                 Add Food
               </Link>
               <Link
                 to={"/manageMyFoods"}
-                className="link link-hover hover:text-[#d59a11]">
+                className="link link-hover hover:text-[#A4A0CC]"
+              >
                 Manage My Foods
               </Link>
               <Link
                 to={"/myFoodRequest"}
-                className="link link-hover hover:text-[#d59a11]">
+                className="link link-hover hover:text-[#A4A0CC]"
+              >
                 My Food Request
               </Link>
             </div>

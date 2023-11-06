@@ -8,16 +8,21 @@ import AvailableFoods from "../pages/availableFoods/availableFoods";
 import ManageMyFoods from "../pages/manageMyFoods/manageMyFoods";
 import MyFoodRequest from "../pages/myFoodRequest/myFoodRequest";
 import ErrorPage from "../pages/errorPage/ErrorPage";
+import FoodDetails from "../pages/foodDetails/FoodDetails";
 
 const myCreateRouter = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    errorElement: <ErrorPage/>,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "food/:foodId",
+        element: <FoodDetails />,
       },
       {
         path: "login",
@@ -41,7 +46,7 @@ const myCreateRouter = createBrowserRouter([
       },
       {
         path: "myFoodRequest",
-        element: <MyFoodRequest/>
+        element: <MyFoodRequest />,
       },
     ],
   },

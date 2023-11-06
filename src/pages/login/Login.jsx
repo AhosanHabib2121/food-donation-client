@@ -124,7 +124,7 @@ const Login = () => {
               <div className="form-control mt-6">
                 <input
                   type="submit"
-                  className="btn bg-[#d59a11] text-white normal-case text-lg hover:bg-[#a57810] border-0"
+                  className="btn bg-[#112A46] text-white normal-case text-lg hover:bg-[#a57810] border-0"
                   value="Login"
                 />
               </div>
@@ -132,7 +132,7 @@ const Login = () => {
             <div className=" text-center mb-6">
               <p className=" text-base font-medium text-[#fff] ">
                 Create a new account?{" "}
-                <Link to="/register" className=" text-[#d59a11]">
+                <Link to="/register" className=" text-[#112A46]">
                   Sign Up
                 </Link>
               </p>
@@ -141,7 +141,7 @@ const Login = () => {
             <div className="text-center mt-4 mb-4">
               <button
                 // onClick={handleGoogle}
-                className="btn bg-inherit hover:bg-[#d59a11]  outline-1  normal-case rounded-full w-64 border-gray-400 text-white "
+                className="btn bg-inherit hover:bg-[#112A46]  outline-1  normal-case rounded-full w-64 border-gray-400 text-white "
               >
                 <FcGoogle className=" text-3xl top-2 left-4 md:left-32 " />
                 Continue with Google

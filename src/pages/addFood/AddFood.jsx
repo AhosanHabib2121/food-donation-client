@@ -6,8 +6,7 @@ import Swal from "sweetalert2";
 
 const AddFood = () => {
     const { user } = useContext(AuthContext);
-    // ● Donator Image , Name, & email (From logged in user)
-    // ● Food Status (By default keep it ”available”)
+    
     
     const handleSubmit = e => {
         e.preventDefault();

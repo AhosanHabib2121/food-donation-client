@@ -11,9 +11,10 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   // create account
-  const createAccount = (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password);
-  };
+    const createAccount = (email, password) => {
+        setLoading(true)
+        return createUserWithEmailAndPassword(auth, email, password);
+    };
 
   // update profile
   const profileUpdate = (name, photo_url) => {

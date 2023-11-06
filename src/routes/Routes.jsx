@@ -7,11 +7,13 @@ import AddFood from "../pages/addFood/AddFood";
 import AvailableFoods from "../pages/availableFoods/availableFoods";
 import ManageMyFoods from "../pages/manageMyFoods/manageMyFoods";
 import MyFoodRequest from "../pages/myFoodRequest/myFoodRequest";
+import ErrorPage from "../pages/errorPage/ErrorPage";
 
 const myCreateRouter = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage/>,
     children: [
       {
         index: true,

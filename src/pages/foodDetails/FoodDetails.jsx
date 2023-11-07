@@ -79,8 +79,8 @@ const FoodDetails = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl md:mx-auto mx-5 my-20 ">
-        <div className="flex md:gap-16 lg:flex-row  flex-col gap-20">
+      <div className="max-w-7xl lg:mx-auto mx-5 my-20 ">
+        <div className="flex md:gap-16 md:flex-row  flex-col gap-20">
           {/* image part */}
           <div className="flex-1 grid justify-end">
             <img

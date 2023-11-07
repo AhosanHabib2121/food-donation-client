@@ -31,13 +31,13 @@ const MyFoodRequest = () => {
       <div className="text-sm breadcrumbs breadcrumbPhoto  h-[300px]">
         <div className="grid justify-center items-center h-[250px]">
           <div className="space-y-8">
-            <h2 className="text-[#fff] font-bold text-4xl text-center md:text-left">
+            <h2 className="text-[#fff] font-bold text-4xl text-center md:text-left px-5 md:px-0">
               My specific food requests here
             </h2>
           </div>
         </div>
       </div>
-      <div className="max-w-7xl md:mx-auto lg:mx-20 mx-5 my-14 ">
+      <div className="max-w-7xl lg:mx-auto md:mx-20 mx-5 my-14 ">
         <div className="overflow-x-auto bg-[#112A46] text-white">
           <table className="table border-collapse border-spacing-2 border border-slate-400">
             {/* head */}

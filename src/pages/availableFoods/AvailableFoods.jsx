@@ -81,7 +81,7 @@ const AvailableFoods = () => {
             </div>
           </div>
         </div>
-        <div className="max-w-7xl md:mx-auto mx-5 mt-10">
+        <div className="max-w-7xl lg:mx-auto mx-5 mt-10">
           <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {foodData?.map((food) => (
               <>

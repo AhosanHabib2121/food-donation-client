@@ -23,7 +23,7 @@ const FeaturedFoods = () => {
     }
 
     return (
-      <div className="max-w-7xl md:mx-auto mx-5 mt-10">
+      <div className="max-w-7xl lg:mx-auto mx-5 mt-10">
         {/* head title here */}
         <div className=" mb-12">
           <h2 className=" text-[#112A46] text-4xl font-bold text-center">

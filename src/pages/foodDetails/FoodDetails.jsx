@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import moment from 'moment';
-import {useState} from "react";
+import { useState } from "react";
+import './FoodDetails.css'
 
 const FoodDetails = () => {
   const {foodId} = useParams();
@@ -36,6 +37,7 @@ const FoodDetails = () => {
     const requestDate = moment().format("MM.D.YYYY, h:mm:ss a");
     const pickup_location = singleFood?.pickup_location;
     const expired_date = singleFood?.expired_date;
+    const food_status = singleFood?.food_status;
 
     const requestFood = {
       donation_money,
@@ -49,6 +51,7 @@ const FoodDetails = () => {
       requestDate,
       pickup_location,
       expired_date,
+      food_status,
     };
     axios
       .post("http://localhost:5000/foodRequest", requestFood)
@@ -67,6 +70,15 @@ const FoodDetails = () => {
 
   return (
     <>
+      <div className="text-sm breadcrumbs breadcrumbPhoto  h-[300px]">
+        <div className="grid justify-center items-center h-[250px]">
+          <div className="space-y-8">
+            <h2 className="text-[#fff] font-bold text-4xl text-center md:text-left">
+              Specific food donation request here
+            </h2>
+          </div>
+        </div>
+      </div>
       <div className="max-w-7xl md:mx-auto mx-5 my-20 ">
         <div className="flex md:gap-16 lg:flex-row  flex-col gap-20">
           {/* image part */}

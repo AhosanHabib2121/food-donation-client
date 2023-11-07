@@ -1,0 +1,6 @@
+.breadcrumbPhoto {
+    background-image: linear-gradient(rgba(31, 43, 59, 0.764), rgba(31, 43, 59, 0.821)), url('../../assets/foodDonatin1.jpg');
+    background-size: cover;
+    background-position-y: bottom;
+
+}

@@ -163,7 +163,7 @@ const Register = () => {
                   </div>
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn text-white border-0 bg-[#112A46] hover:bg-[#a57810] normal-case text-xl">
+                  <button className="btn text-white border-0 bg-[#112A46] hover:bg-[#0b1f37] normal-case text-xl">
                     Register
                   </button>
                 </div>
@@ -171,7 +171,7 @@ const Register = () => {
               <div className=" text-center pt-3">
                 <h4 className=" text-white">
                   Already have an account?{" "}
-                  <Link to="/login" className=" text-[#112A46]">
+                  <Link to="/login" className=" text-[#A4A0CC]">
                     Login
                   </Link>
                 </h4>

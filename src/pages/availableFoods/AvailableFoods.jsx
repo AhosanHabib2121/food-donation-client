@@ -1,16 +1,15 @@
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
-import './AvailableFoods.css'
-import { useEffect, useState } from "react";
+import {useQuery} from "@tanstack/react-query";
+import "./AvailableFoods.css";
+import {useEffect, useState} from "react";
 import ExpireDate from "./ExpireDate";
 
 const AvailableFoods = () => {
   const [inputValue, setInputValue] = useState("");
   const getInputData = inputValue.toUpperCase();
   const [foodData, setFoodData] = useState([]);
-
 
   const availableFoods = async () => {
     const res = await axios.get("http://localhost:5000/foods");
@@ -30,12 +29,11 @@ const AvailableFoods = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     const getInputValue = e.target.foodName.value;
-      setInputValue(getInputValue);
+    setInputValue(getInputValue);
   };
 
- 
   // input value filtering here
-  
+
   const foodNameBase = availableFood?.data?.foodAll.filter(
     (food) => food.food_name.toUpperCase() == getInputData
   );
@@ -45,15 +43,13 @@ const AvailableFoods = () => {
       setFoodData(availableFood?.data?.foodAll);
     } else {
       setFoodData(foodNameBase);
-      
     }
   }, [availableFood?.data?.foodAll, foodNameBase, getInputData]);
 
   refetch();
   if (isLoading) {
-    return <p className="text-red-500 text-center">loading.......</p>
+    return <p className="text-red-500 text-center">loading.......</p>;
   }
- 
 
   return (
     <>

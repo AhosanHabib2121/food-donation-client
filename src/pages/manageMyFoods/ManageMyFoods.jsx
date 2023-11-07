@@ -1,16 +1,22 @@
 import Footer from "../../components/footer/Footer";
+import {useReactTable} from "@tanstack/react-table";
+
 
 const ManageMyFoods = () => {
-    return (
-      <>
-        <div>
-          <h2>this is Manage My Foods</h2>
-        </div>
+  const table = useReactTable({
+    title:' React Table',
+  });
 
-        {/* footer section here */}
-        <Footer/>
-      </>
-    );
+  return (
+    <>
+      <div className="max-w-7xl md:mx-auto mx-5 my-16 ">
+        
+      </div>
+
+      {/* footer section here */}
+      <Footer />
+    </>
+  );
 };
 
 export default ManageMyFoods;

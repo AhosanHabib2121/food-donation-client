@@ -12,7 +12,7 @@ import { MdLocationOn, MdCall, MdOutlineFax, MdEmail } from "react-icons/md";
 const Footer = () => {
     return (
       <>
-        <div className=" footer-image mt-5">
+        <div className=" footer-image">
           <footer className="footer justify-center md:px-5 md:justify-normal lg:px-0 py-20  text-white font-robotFont max-w-7xl md:mx-auto ">
             <aside>
               <div className=" flex  md:gap-2 items-center">

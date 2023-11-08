@@ -1,17 +1,16 @@
-import axios from "axios";
 import Footer from "../../components/footer/Footer";
 import { useQuery } from "@tanstack/react-query";
 import { useContext} from "react";
 import { AuthContext } from "../../authProvider/AuthProvider";
 import './MyFoodRequest.css'
+import useAxiosSecure from "../../axiosSecure/useAxiosSecure";
 
 const MyFoodRequest = () => {
   const { user } = useContext(AuthContext)
+  const axiosSecure = useAxiosSecure()
 
     const myFoodRequest = async() => {
-      const res = await axios.get(
-        `http://localhost:5000/foodRequest?email=${user?.email}`
-      );
+      const res = await axiosSecure.get(`/foodRequest?email=${user?.email}`);
       return res;
     };
     const {data, isLoading} = useQuery({

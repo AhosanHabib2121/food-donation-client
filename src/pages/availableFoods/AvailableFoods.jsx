@@ -13,7 +13,7 @@ const AvailableFoods = () => {
   const [foodData, setFoodData] = useState([]);
 
   const availableFoods = async () => {
-    const res = await axios.get("http://localhost:5000/foods");
+    const res = await axios.get("https://food-donation-server-ass11.vercel.app/foods");
     return res;
   };
 

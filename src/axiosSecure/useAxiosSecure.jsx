@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../authProvider/AuthProvider";
 
 const axiosSecure = axios.create({
-    baseURL: "http://localhost:5000",
+    baseURL: "https://food-donation-server-ass11.vercel.app",
     withCredentials: true
 });
 

@@ -35,7 +35,7 @@ const Login = () => {
           password,
           lastLoginAt,
         };
-        axios.patch("http://localhost:5000/user", userData).then((res) => {
+        axios.patch("https://food-donation-server-ass11.vercel.app/user", userData).then((res) => {
           if (res.data.modifiedCount == 1) {
             const Toast = Swal.mixin({
               toast: true,

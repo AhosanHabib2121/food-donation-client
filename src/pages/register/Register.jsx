@@ -42,7 +42,7 @@ const Register = () => {
                           password,
                           createdAt,
                         };
-                        axios.post("http://localhost:5000/user", userData)
+                        axios.post("https://food-donation-server-ass11.vercel.app/user", userData)
                         .then(res => {
                             if (res.data.insertedId) {
                                 const Toast = Swal.mixin({

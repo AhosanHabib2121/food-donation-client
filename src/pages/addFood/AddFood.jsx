@@ -33,7 +33,7 @@ const AddFood = () => {
           donatorEmail,
           donatorImage,
         };
-        axios.post("http://localhost:5000/foods", addFoodInfo)
+        axios.post("https://food-donation-server-ass11.vercel.app/foods", addFoodInfo)
             .then(res => {
                 if(res.data.acknowledged){
                     Swal.fire({

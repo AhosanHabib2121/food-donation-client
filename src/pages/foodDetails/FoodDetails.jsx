@@ -14,7 +14,7 @@ const FoodDetails = () => {
   const [success, setSuccess] = useState("");
   const { user } = useContext(AuthContext);
   const FoodData = async () => {
-    const res = await axios.get("http://localhost:5000/foods");
+    const res = await axios.get("https://food-donation-server-ass11.vercel.app/foods");
     return res;
   };
 
@@ -58,7 +58,7 @@ const FoodDetails = () => {
       food_status,
     };
     axios
-      .post("http://localhost:5000/foodRequest", requestFood , {withCredentials:true})
+      .post("https://food-donation-server-ass11.vercel.app/foodRequest", requestFood , {withCredentials:true})
       .then((res) => {
         if (res.data.acknowledged) {
           setSuccess("Food request successfully");

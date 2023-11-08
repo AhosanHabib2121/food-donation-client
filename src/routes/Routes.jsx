@@ -30,6 +30,14 @@ const myCreateRouter = createBrowserRouter([
         ),
       },
       {
+        path: "availableFoods/food/:foodId",
+        element: (
+          <PrivateRoutes>
+            <FoodDetails />
+          </PrivateRoutes>
+        ),
+      },
+      {
         path: "login",
         element: <Login />,
       },

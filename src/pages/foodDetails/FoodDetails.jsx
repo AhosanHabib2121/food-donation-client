@@ -3,14 +3,16 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import moment from 'moment';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import './FoodDetails.css'
 import loading from '../../assets/Animation -loading.gif'
+import { AuthContext } from "../../authProvider/AuthProvider";
 
 
 const FoodDetails = () => {
   const {foodId} = useParams();
   const [success, setSuccess] = useState("");
+  const { user } = useContext(AuthContext);
   const FoodData = async () => {
     const res = await axios.get("http://localhost:5000/foods");
     return res;
@@ -33,9 +35,9 @@ const FoodDetails = () => {
     const food_name = singleFood?.food_name;
     const food_image = singleFood?.food_image;
     const food_id = singleFood?._id;
-    const donatorEmail = singleFood?._id;
+    const donatorEmail = singleFood?.donatorEmail;
     const donatorName = singleFood?.donatorName;
-    const userEmail = singleFood?.donatorEmail;
+    const userEmail =user?.email;
     const requestDate = moment().format("MM.D.YYYY, h:mm:ss a");
     const pickup_location = singleFood?.pickup_location;
     const expired_date = singleFood?.expired_date;
@@ -56,7 +58,7 @@ const FoodDetails = () => {
       food_status,
     };
     axios
-      .post("http://localhost:5000/foodRequest", requestFood)
+      .post("http://localhost:5000/foodRequest", requestFood , {withCredentials:true})
       .then((res) => {
         if (res.data.acknowledged) {
           setSuccess("Food request successfully");

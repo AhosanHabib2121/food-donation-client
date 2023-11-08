@@ -52,8 +52,9 @@ const AvailableFoods = () => {
     return <>
       <div className=" grid justify-center">
         <img src={loading} alt="not found" />
-        </div>
+      </div>
     </>;
+
   }
 
   return (

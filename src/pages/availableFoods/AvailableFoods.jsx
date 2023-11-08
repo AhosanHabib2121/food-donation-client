@@ -5,6 +5,7 @@ import {useQuery} from "@tanstack/react-query";
 import "./AvailableFoods.css";
 import {useEffect, useState} from "react";
 import ExpireDate from "./ExpireDate";
+import loading from '../../assets/Animation -loading.gif'
 
 const AvailableFoods = () => {
   const [inputValue, setInputValue] = useState("");
@@ -48,7 +49,11 @@ const AvailableFoods = () => {
 
   refetch();
   if (isLoading) {
-    return <p className="text-red-500 text-center">loading.......</p>;
+    return <>
+      <div className=" grid justify-center">
+        <img src={loading} alt="not found" />
+        </div>
+    </>;
   }
 
   return (

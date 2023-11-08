@@ -1,6 +1,7 @@
 import {useQuery} from "@tanstack/react-query";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import loading from '../../assets/Animation -loading.gif'
 
 const ExpireDate = () => {
   const ExpireDateFood = async () => {
@@ -18,7 +19,11 @@ const ExpireDate = () => {
   });
 
   if (isLoading) {
-    return <p className=" text-red-600 text-center">loading....</p>;
+    return <>
+      <div className=" grid justify-center">
+        <img src={loading} alt="not found" />
+        </div>
+    </>;
   }
   refetch();
   return (

@@ -5,6 +5,8 @@ import { useQuery } from "@tanstack/react-query";
 import moment from 'moment';
 import { useState } from "react";
 import './FoodDetails.css'
+import loading from '../../assets/Animation -loading.gif'
+
 
 const FoodDetails = () => {
   const {foodId} = useParams();
@@ -65,7 +67,11 @@ const FoodDetails = () => {
   };
 
   if (isLoading) {
-    return <p className=" text-red-600 text-center">loading....</p>;
+    return <>
+      <div className=" grid justify-center">
+        <img src={loading} alt="not found" />
+        </div>
+    </>;
   }
 
   return (

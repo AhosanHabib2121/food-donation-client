@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import loading from '../../assets/Animation -loading.gif'
 
 const FeaturedFoods = () => {
 
@@ -19,8 +20,12 @@ const FeaturedFoods = () => {
     });
     refetch();
     if (isLoading) {
-      return <p className=" text-red-600 text-center">loading....</p>;
-    }
+      return <>
+        <div className=" grid justify-center">
+          <img src={loading} alt="not found" />
+          </div>
+        </>;
+      }
 
     return (
       <div className="max-w-7xl lg:mx-auto mx-5 mt-10">

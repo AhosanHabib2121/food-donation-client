@@ -4,6 +4,7 @@ import { useContext} from "react";
 import { AuthContext } from "../../authProvider/AuthProvider";
 import './MyFoodRequest.css'
 import useAxiosSecure from "../../axiosSecure/useAxiosSecure";
+import loading from '../../assets/Animation -loading.gif'
 
 const MyFoodRequest = () => {
   const { user } = useContext(AuthContext)
@@ -21,7 +22,11 @@ const MyFoodRequest = () => {
   console.log(data);
   
     if (isLoading) {
-      return <p className=" text-red-600 text-center">loading....</p>;
+      return <>
+      <div className=" grid justify-center">
+        <img src={loading} alt="not found" />
+        </div>
+    </>;
     }
      
 
